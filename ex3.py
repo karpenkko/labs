@@ -5,14 +5,16 @@ parser.add_argument("formula", nargs="?")
 args = parser.parse_args()
 
 try:
-    if "++" in args.formula or "--" in args.formula:
-        print("False / None")
+    if args.formula[0].isdigit() and args.formula[-1].isdigit():
+        if "++" in args.formula or "--" in args.formula:
+            print("False / None")
+        else:
+            result = eval(args.formula)
+            if result:
+                print("True /", result)
     else:
-        result = eval(args.formula)
-        if result:
-            print("True /", result)
-except NameError:
+        print("False / None")
+except (NameError, TypeError):
     print("False / None")
-except TypeError:
-    print("False / None")
+
 
