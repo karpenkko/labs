@@ -16,3 +16,4 @@ except AttributeError:
         print(function(*args.a))
     except AttributeError:
         print("Unknown function")
+
