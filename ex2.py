@@ -7,13 +7,25 @@ parser.add_argument("f")
 parser.add_argument("a", nargs="+", type=int)
 args = parser.parse_args()
 
-try:
-    function = getattr(math, args.f)
-    print(function(*args.a))
-except AttributeError:
+def check(function, arguments):
     try:
-        function = getattr(operator, args.f)
-        print(function(*args.a))
-    except AttributeError:
-        print("Unknown function")
+        func = getattr(operator, function, False)
+        if func:
+            return func(*arguments)
+
+        func = getattr(math, function, False)
+        if func:
+            return func(*arguments)
+    except:
+        return False
+
+
+result = check(args.f, args.a)
+if result:
+    print(result)
+else:
+    print("Incorrect input")
+
+
+
 
