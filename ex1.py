@@ -6,5 +6,17 @@ parser.add_argument("operator")
 parser.add_argument("b")
 args = parser.parse_args()
 
-f = args.a + args.operator + args.b
-print(eval(f))
+try:
+    if args.a.isnumeric() and args.b.isnumeric():
+        print(eval(f"{args.a} {args.operator} {args.b}"))
+    else:
+        print("Incorrect input of arguments")
+except ZeroDivisionError:
+    print("Division by zero")
+except SyntaxError:
+    print("Incorrect input of operator")
+except:
+    print("Error")
+
+
+
