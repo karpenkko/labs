@@ -1,32 +1,38 @@
 class Rectangle:
-    length = None
-    width = None
-
-    def setter(self, length=1.0, width=1.0):
+    def __init__(self, length=1.0, width=1.0):
         if isinstance(length, float) and isinstance(width, float):
             if 0.0 < length < 20.0 and 0.0 < width < 20.0:
-                self.length = length
-                self.width = width
-                return True
-            else:
-                return False
-        else:
-            return False
+                self.__length = length
+                self.__width = width
 
-    def getter(self):
-        return self.length, self.width
+    def set_width(self, value=1.0):
+        if isinstance(value, float):
+            if 0.0 < value < 20.0:
+                self.__width = value
+
+    def set_length(self, value=1.0):
+        if isinstance(value, float):
+            if 0.0 < value < 20.0:
+                self.__length = value
+
+    def get_width(self):
+        return self.__width
+
+    def get_length(self):
+        return self.__length
 
     def perimeter(self):
-        return 2 * (self.length + self.width)
+        return 2 * (self.__length + self.__width)
 
     def area(self):
-        return self.length * self.width
+        return self.__length * self.__width
 
 
-rec1 = Rectangle()
-if rec1.setter(16.0):
-    print("length and width", rec1.getter())
+try:
+    rec1 = Rectangle(16.0)
+    rec1.set_width(3.0)
+    print("length and width", rec1.get_length(), rec1.get_width())
     print("perimeter", rec1.perimeter())
     print("area", rec1.area())
-else:
+except AttributeError:
     print("Incorrect input")

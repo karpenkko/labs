@@ -1,24 +1,34 @@
 class File:
     def __init__(self, f):
         self.f = f
-        self.data = f.read()
-
-    def show(self):
-        print(self.data)
 
     def characters(self):
-        return len(self.data.replace(" ", ""))
+        self.f.seek(0)
+        value = 0
+        for item in self.f:
+            c = item.replace(" ", "")
+            value += len(c)
+        return value
 
     def words(self):
-        return len(self.data.split())
+        self.f.seek(0)
+        value = 0
+        for item in self.f:
+            w = item.split()
+            value += len(w)
+        return value
 
     def sentences(self):
-        return len(self.data.split("."))
+        self.f.seek(0)
+        value = 0
+        for item in self.f:
+            s = item.split(".")
+            value += len(s)
+        return value
 
 
 file = open("text.txt", "r")
 file1 = File(file)
-# file.show()
 print("File has:")
 print(file1.characters(), "character(s)")
 print(file1.words(), "word(s)")
