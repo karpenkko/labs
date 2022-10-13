@@ -44,7 +44,6 @@ class Order:
     def get_total(self):
         for item in self.products:
             self.total += item.price
-        print(self.total)
 
     def __str__(self):
         return f"Order\n" \
