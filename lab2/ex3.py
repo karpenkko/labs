@@ -43,7 +43,8 @@ class Order:
 
     def get_total(self):
         for item in self.products:
-            self.total += item.price
+            if item.price is not None:
+                self.total += item.price
 
     def __str__(self):
         return f"Order\n" \
