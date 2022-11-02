@@ -105,38 +105,3 @@ class Sunday(Pizza):
 
 pizza = Tuesday('paprika')
 print(pizza)
-
-
-
-
-
-
-
-
-# class Pizza:
-#     def __init__(self):
-#         self.name = 'Basic'
-#         self.basic = ['dough', 'ketchup', 'cheese']
-#         self.ingredients = {'pineapple': 14, 'bacon': 25, 'mushrooms': 9, 'sausages': 20, 'chicken': 20, 'corn': 5,
-#                             'olives': 10, 'paprika': 10, 'tomato': 10, 'pork': 20, 'salami': 20, 'extra cheese': 20}
-#
-#
-# class Monday(Pizza):
-#     def __init__(self, *args):
-#         super().__init__()
-#         self.m_name = '4 meats'
-#         self.m_basic = self.basic + ['salami', 'chicken', 'sausages', 'bacon', 'onion']
-#         self.m_price = 109
-#         for item in args:
-#             if self.ingredients[item]:
-#                 self.m_basic.append(item)
-#                 self.m_price += self.ingredients[item]
-#
-#     def __str__(self):
-#         return f'Monday pizza: {self.m_name}\n' \
-#                f'Ingredients: {self.m_basic}\n' \
-#                f'Price: {self.m_price}'
-#
-#
-# pizza = Monday('olives', 'pork', 'eggs')
-# print(pizza)
