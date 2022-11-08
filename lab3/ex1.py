@@ -97,7 +97,7 @@ class RegularTicket:
         if str(self.number) not in lis['tickets']:
             lis['tickets'][str(self.number)] = {}
             lis['tickets'][str(self.number)]['name'] = event.name
-            lis['tickets'][str(self.number)]['date'] = f'{event.year}.{event.month}'
+            lis['tickets'][str(self.number)]['date'] = f'{event.year}.{event.month}.{event.day}'
             lis['tickets'][str(self.number)]['time'] = f'{event.hour}:{event.minute}'
             lis['tickets'][str(self.number)]['title'] = self.title
             lis['tickets'][str(self.number)]['price'] = self.price
@@ -165,4 +165,4 @@ ticket1 = order(event1, 60, 10)
 ticket2 = order(event1, 60, 10, True)
 print(ticket2)
 print(ticket2.get_price())
-print(RegularTicket.get_ticket('a4b05234-3273-40d8-8803-b5c307b190c2'))
+print(RegularTicket.get_ticket('fb9891e2-78eb-4d88-81d1-b1a8266a9d75'))

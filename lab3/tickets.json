@@ -1,29 +1,29 @@
 {
     "tickets": {
-        "e9bce955-e574-48b9-acf5-b62f56dd32a7": {
+        "fb9891e2-78eb-4d88-81d1-b1a8266a9d75": {
             "name": "Apple Event",
-            "date": "2022.11",
+            "date": "2022.11.20",
+            "time": "12:30",
+            "title": "Regular",
+            "price": 100
+        },
+        "0ddf2a09-9bb5-4b83-8c9f-da52dd60bbd5": {
+            "name": "Apple Event",
+            "date": "2022.11.20",
             "time": "12:30",
             "title": "Student",
-            "price": 50.0
+            "price": 50
         },
-        "a4b05234-3273-40d8-8803-b5c307b190c2": {
+        "670de6af-b2b4-4406-a25a-6d6f41e0eaf6": {
             "name": "Apple Event",
-            "date": "2022.11",
+            "date": "2022.11.20",
             "time": "12:30",
             "title": "Regular",
             "price": 100
         },
-        "ea63ab51-1aef-4ab7-a1a3-52700fd06355": {
+        "bf216e9b-5128-48b3-8ec6-4f16775dbc7a": {
             "name": "Apple Event",
-            "date": "2022.11",
-            "time": "12:30",
-            "title": "Regular",
-            "price": 100
-        },
-        "9e2d1e77-36c0-461a-ac72-292b1b1bd50f": {
-            "name": "Apple Event",
-            "date": "2022.11",
+            "date": "2022.11.20",
             "time": "12:30",
             "title": "Student",
             "price": 50
