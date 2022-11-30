@@ -1,5 +1,5 @@
 import math
-
+from decimal import Decimal
 
 class Rational:
     def __init__(self, numerator=1, denominator=1):
@@ -60,6 +60,30 @@ class Rational:
             return Rational(num, den)
         return NotImplemented
 
+    def __gt__(self, other):
+        return f'{self.__str__()} is greater' if Decimal(self.numerator/self.denominator) > Decimal(other.numerator/other.denominator) \
+            else f'{other.__str__()} is greater'
+
+    def __lt__(self, other):
+        return f'{self.__str__()} is less' if Decimal(self.numerator/self.denominator) < Decimal(other.numerator/other.denominator) \
+            else f'{other.__str__()} is less'
+
+    def __ge__(self, other):
+        return f'{self.__str__()} is greater/equal' if Decimal(self.numerator/self.denominator) >= Decimal(other.numerator/other.denominator) \
+            else f'{other.__str__()} is greater/equal'
+
+    def __le__(self, other):
+        return f'{self.__str__()} is less/equal' if Decimal(self.numerator/self.denominator) <= Decimal(other.numerator/other.denominator) \
+            else f'{other.__str__()} is less/equal'
+
+    def __eq__(self, other):
+        return f'Fractions are equal' if Decimal(self.numerator/self.denominator) == Decimal(other.numerator/other.denominator) \
+            else f'Fractions are not equal'
+
+    def __ne__(self, other):
+        return f'Fractions are not equal' if Decimal(self.numerator/self.denominator) != Decimal(other.numerator/other.denominator) \
+            else f'Fractions are equal'
+
     def __str__(self):
         k = math.gcd(self.numerator, self.denominator)
         a = self.numerator // k
@@ -71,8 +95,12 @@ class Rational:
 
 
 ob1 = Rational(3, 4)
-ob2 = Rational(5, 6)
+ob2 = Rational(5, 8)
+ob3 = Rational(1, 5)
+ob4 = Rational(2, 10)
 print(ob1 + ob2)
 print(ob1 - ob2)
 print(ob1 * ob2)
 print(ob1 / ob2)
+print(ob1 > ob2)
+print(ob3 == ob4)

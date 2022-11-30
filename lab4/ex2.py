@@ -65,7 +65,7 @@ class Calendar:
             else f'{other.convert_date()} is less'
 
     def __ge__(self, other):
-        return f'{self.convert_date()} is greater' if self.convert_date() > other.convert_date() \
+        return f'{self.convert_date()} is greater/equal' if self.convert_date() > other.convert_date() \
             else f'{other.convert_date()} is greater/equal'
 
     def __le__(self, other):
@@ -96,4 +96,8 @@ print(d1 == d2)
 print(d3 != d4)
 print(d5 > d6)
 print(d5 < d6)
+d1 += (10, 2, 0)
+print(d1)
+d2 -= (6, 1, 1)
+print(d2)
 
